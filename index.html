@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>VueMart</h1>
+
+        <h2>Shopping Cart</h2>
+        <ul>
+            <li v-if="costOfApples">Apples: ${{ costOfApples }}</li>
+            <li>Bananas: ${{ costOfBananas }}</li>
+            <li>Coconut: ${{ costOfCoconuts }}</li>
+        </ul>
+        <p>Total: ${{ totalPrice}}</li>
+
+            <h2>Store Hours</h2>
+            <p>Sunday: 10:00 - 16:00</p>
+            <p>Monday to Friday: 09:00 - 17:00</p>
+            <p>Saturday: 09:30 - 18:00</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                costOfApples: 0,
+                costOfBananas: 2,
+                costOfCoconuts: 8
+            },
+            computed: {
+                totalPrice() {
+                    return this.costOfApples + this.costOfBananas + this.costOfCoconuts
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
