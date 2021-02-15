@@ -1,19 +1,30 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomeLink from './components/HomeLink.vue'
+import NavLink from './components/NavLink.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HomeLink,
+    NavLink
   }
 }
 </script>
 
+<template>
+  <div id="app">
+      <HomeLink />
+    <nav>
+      <NavLink url="/" text="Home" />
+      <NavLink url="/about" text="About" />
+      <NavLink contact="/" text="Contact" />
+      
+    </nav>
+    <p>Welcome to our <HomeLink /> page!</p>
+  </div>
+</template>
+ 
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
